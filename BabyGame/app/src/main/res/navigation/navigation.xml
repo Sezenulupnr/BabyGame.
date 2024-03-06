@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.babygame.ui.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/splashToEntry"
+            app:destination="@id/entryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.example.babygame.ui.EntryFragment"
+        android:label="EntryFragment"
+        tools:layout="@layout/fragment_entry">
+        <action
+            android:id="@+id/entryToGame"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.babygame.ui.GameFragment"
+        android:label="FirstGameFragment"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/gameToFinish"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.example.babygame.ui.FinishFragment"
+        android:label="FinishFragment"
+        tools:layout="@layout/fragment_finish">
+        <action
+            android:id="@+id/finishToGame"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+</navigation>
